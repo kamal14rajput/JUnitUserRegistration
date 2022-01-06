@@ -28,7 +28,8 @@ public class UserRegistration {
 
 	}
 
-	public static boolean userEmail(String email) {
+	public static boolean userEmail(String email)
+	{
 
 		Pattern pattern = Pattern.compile(EmailRegex);
 		Matcher matcher = pattern.matcher(email);
