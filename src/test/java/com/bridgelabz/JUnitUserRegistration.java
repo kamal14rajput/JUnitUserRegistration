@@ -100,4 +100,27 @@ public class JUnitUserRegistration {
 		assertFalse(isValid);
 
 	}
+
+	@Test
+	public void givenEmail_WhenProper_ShouldReturnTrue() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userEmail("kamal@gmail.com");
+		Assert.assertTrue(isValid);
+	}
+
+	@Test
+	public void givenEmail_WhenEmptyString_ShouldReturnFalse() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userEmail("");
+		Assert.assertFalse(isValid);
+
+	}
+
+	@Test
+	public void givenEmail_WhenShort_ShouldReturnFalse() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userEmail("fshg");
+		Assert.assertFalse(isValid);
+
+	}
 }
