@@ -7,6 +7,7 @@ public class UserRegistration {
 	private static final String FirstName = "^[A-Z][a-z]{2,}";
 	private static final String LastName = "^[A-Z][a-z]{2,}";
 	private static final String EmailRegex = "^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?";
+	private static final String PhoneNoRegex = "^[0-9]{2}[0-9]{10}";
 
 	public boolean userFirstName(String firstName) {
 
@@ -32,5 +33,9 @@ public class UserRegistration {
 		Matcher matcher = pattern.matcher(email);
 
 		return matcher.matches();
+	}
+public boolean userPhoneNo(String phone) {
+		
+		return Pattern.matches(PhoneNoRegex, phone);
 	}
 }
