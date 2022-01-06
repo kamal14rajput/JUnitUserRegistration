@@ -123,6 +123,7 @@ public class JUnitUserRegistration {
 		Assert.assertFalse(isValid);
 
 	}
+
 	@Test
 	public void givenPhoneNo_WhenProper_ShouldReturnTrue() {
 		UserRegistration user = new UserRegistration();
