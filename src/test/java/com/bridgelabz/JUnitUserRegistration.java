@@ -139,9 +139,9 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenPassword_WhenOneUppercaseLetter_ShouldReturnTrue() {
+	public void givenPassword_WhenOneNumericValue_ShouldReturnTrue() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userPassword("passWord");
+		boolean isValid = user.userPassword("passW8rd");
 	    Assert.assertTrue( isValid);
 	}
 	@Test
