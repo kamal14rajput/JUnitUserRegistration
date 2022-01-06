@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 	private static final String FirstName = "^[A-Z][a-z]{2,}";
 	private static final String LastName = "^[A-Z][a-z]{2,}";
-	private static final String EmailRegex = "^[A-Za-z0-9_-]+([.][A-Za-z0-9_-]+)@[A-Za-z]+[A-Za-z]+([.][A-Za-z]+)";
+	private static final String EmailRegex = "^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?";
 
 	public boolean userFirstName(String firstName) {
 
@@ -26,7 +26,7 @@ public class UserRegistration {
 
 	}
 
-	public boolean userEmail(String email) {
+	public static boolean userEmail(String email) {
 
 		Pattern pattern = Pattern.compile(EmailRegex);
 		Matcher matcher = pattern.matcher(email);
