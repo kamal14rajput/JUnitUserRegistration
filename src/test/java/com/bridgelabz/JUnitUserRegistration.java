@@ -139,15 +139,22 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenPassword_WhenOneNumericValue_ShouldReturnTrue() {
+	public void givenPassword_WhenOnespecialcharacter_ShouldReturnTrue() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userPassword("passW8rd");
+		boolean isValid = user.userPassword("pasW8rrd#");
 	    Assert.assertTrue( isValid);
 	}
 	@Test
 	public void givenPassword_WhenShort_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userPassword("Pass");
+		Assert.assertFalse(isValid);
+	    
+	}
+	@Test
+	public void givenPassword_WhenNospecialcharacter_ShouldReturnFalse() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userPassword("Password");
 		Assert.assertFalse(isValid);
 	    
 	}
