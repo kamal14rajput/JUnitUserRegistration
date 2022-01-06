@@ -139,17 +139,17 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenPassword_WhenProper_ShouldReturnTrue() {
+	public void givenPassword_WhenOneUppercaseLetter_ShouldReturnTrue() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userPassword("Password");
-		Assert.assertTrue(isValid);
+		boolean isValid = user.userPassword("passWord");
+	    Assert.assertTrue( isValid);
 	}
-
 	@Test
 	public void givenPassword_WhenShort_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userPassword("Pads");
+		boolean isValid = user.userPassword("Pass");
 		Assert.assertFalse(isValid);
-
+	    
 	}
+	
 }
