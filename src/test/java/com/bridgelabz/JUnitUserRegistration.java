@@ -1,6 +1,7 @@
 package com.bridgelabz;
 
-
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -52,5 +53,51 @@ public class JUnitUserRegistration {
 		Assert.assertFalse(isValid);
 
 	}
-}
 
+	@Test
+	public void givenLastName_WhenProper_ShouldReturnTrue() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userFirstName("Rajput");
+		assertTrue(isValid);
+	}
+
+	@Test
+	public void givenLastName_WhenFirstLetterSmall_ShouldReturnFalse() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userFirstName("rajput");
+		assertFalse(null, isValid);
+
+	}
+
+	@Test
+	public void givenLastName_WhenEmptyString_ShouldReturnFalse() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userFirstName("");
+		assertFalse(isValid);
+
+	}
+
+	@Test
+	public void givenLastName_WhenShort_ShouldReturnFalse() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userFirstName("ra");
+		assertFalse(isValid);
+
+	}
+
+	@Test
+	public void givenLastName_WhenHavingNumber_ShouldReturnFalse() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userFirstName("4535");
+		assertFalse(isValid);
+
+	}
+
+	@Test
+	public void givenLastName_WhenHavingSpecialChar_ShouldReturnFalse() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userFirstName("r#@t");
+		assertFalse(isValid);
+
+	}
+}
