@@ -123,4 +123,17 @@ public class JUnitUserRegistration {
 		Assert.assertFalse(isValid);
 
 	}
+	@Test
+	public void givenPhoneNo_WhenProper_ShouldReturnTrue() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userPhoneNo("918806547659");
+	    Assert.assertTrue( isValid);
+	}
+	@Test
+		public void givenPhoneNo_WhenShort_ShouldReturnFalse() {
+			UserRegistration user = new UserRegistration();
+			boolean isValid = user.userPhoneNo("9188064");
+		    Assert.assertFalse(isValid);
+		    
+		}
 }
