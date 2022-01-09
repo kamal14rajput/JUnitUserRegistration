@@ -11,40 +11,59 @@ public class UserRegistration {
 	private static final String PasswordRegex= ("^(?=.*[@#$%^&+=])(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$");
 
 
-	public boolean userFirstName(String firstName) {
+	public boolean userFirstName(String firstName) throws UserDefineException {
 
 		Pattern pattern = Pattern.compile(FirstName);
 		Matcher matcher = pattern.matcher(firstName);
-
+		if(!matcher.matches()) {
+			throw new UserDefineException("Enter a valid pattern");
+		}
 		return matcher.matches();
 
 	}
 
-	public static boolean userLastName(String lastName) {
+	public static boolean userLastName(String lastName) throws UserDefineException {
 
 		Pattern pattern = Pattern.compile(LastName);
 		Matcher matcher = pattern.matcher(lastName);
-
+		if(!matcher.matches()) {
+			throw new UserDefineException("Enter a valid pattern");
+		}
+		
 		return matcher.matches();
 
 	}
 
-	public static boolean userEmail(String email)
+	public static boolean userEmail(String email) throws UserDefineException
 	{
 
 		Pattern pattern = Pattern.compile(EmailRegex);
 		Matcher matcher = pattern.matcher(email);
-
+		if(!matcher.matches()) {
+			throw new UserDefineException("Enter a valid pattern");
+		}
+		
 		return matcher.matches();
 	}
 
-	public boolean userPhoneNo(String phone) {
-
-		return Pattern.matches(PhoneNoRegex, phone);
+	public boolean userPhoneNo(String phone) throws UserDefineException {
+		
+		Pattern pattern = Pattern.compile(PhoneNoRegex);
+		Matcher matcher = pattern.matcher(phone);
+		if(!matcher.matches()) {
+			throw new UserDefineException("Enter a valid pattern");
+		}
+		return matcher.matches();
 	}
 
-	public boolean userPassword(String password) {
-
-		return Pattern.matches(PasswordRegex, password);
+	public boolean userPassword(String password) throws UserDefineException {
+		
+		Pattern pattern = Pattern.compile(PasswordRegex);
+		Matcher matcher = pattern.matcher(password);
+		if(!matcher.matches()) {
+			throw new UserDefineException("Enter a valid pattern");
+		}
+		
+		return matcher.matches();
 	}
 }
