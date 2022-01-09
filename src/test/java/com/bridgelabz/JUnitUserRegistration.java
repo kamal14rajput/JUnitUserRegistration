@@ -1,5 +1,6 @@
 package com.bridgelabz;
 
+import com.bridgelabz.UserRegistration;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -8,14 +9,14 @@ import org.junit.Test;
 
 public class JUnitUserRegistration {
 	@Test
-	public void givenFirstName_WhenProper_ShouldReturnTrue() {
+	public void givenFirstName_WhenProper_ShouldReturnTrue() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("Kamal");
 		Assert.assertTrue(isValid);
 	}
 
 	@Test
-	public void givenFirstName_WhenFirstLetterSmall_ShouldReturnFalse() {
+	public void givenFirstName_WhenFirstLetterSmall_ShouldReturnFalse() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("kamal");
 		Assert.assertFalse(isValid);
@@ -23,7 +24,7 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenFirstName_WhenEmptyString_ShouldReturnFalse() {
+	public void givenFirstName_WhenEmptyString_ShouldReturnFalse() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("");
 		Assert.assertFalse(isValid);
@@ -31,7 +32,7 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenFirstName_WhenShort_ShouldReturnFalse() {
+	public void givenFirstName_WhenShort_ShouldReturnFalse() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("ka");
 		Assert.assertFalse(isValid);
@@ -39,7 +40,7 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenFirstName_WhenHavingNumber_ShouldReturnFalse() {
+	public void givenFirstName_WhenHavingNumber_ShouldReturnFalse() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("734");
 		Assert.assertFalse(isValid);
@@ -47,7 +48,7 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenFirstName_WhenHavingSpecialChar_ShouldReturnFalse() {
+	public void givenFirstName_WhenHavingSpecialChar_ShouldReturnFalse() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("Kam@#");
 		Assert.assertFalse(isValid);
@@ -55,14 +56,14 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenLastName_WhenProper_ShouldReturnTrue() {
+	public void givenLastName_WhenProper_ShouldReturnTrue() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("Rajput");
 		assertTrue(isValid);
 	}
 
 	@Test
-	public void givenLastName_WhenFirstLetterSmall_ShouldReturnFalse() {
+	public void givenLastName_WhenFirstLetterSmall_ShouldReturnFalse() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("rajput");
 		assertFalse(null, isValid);
@@ -70,7 +71,7 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenLastName_WhenEmptyString_ShouldReturnFalse() {
+	public void givenLastName_WhenEmptyString_ShouldReturnFalse() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("");
 		assertFalse(isValid);
@@ -78,7 +79,7 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenLastName_WhenShort_ShouldReturnFalse() {
+	public void givenLastName_WhenShort_ShouldReturnFalse() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("ra");
 		assertFalse(isValid);
@@ -86,7 +87,7 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenLastName_WhenHavingNumber_ShouldReturnFalse() {
+	public void givenLastName_WhenHavingNumber_ShouldReturnFalse() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("4535");
 		assertFalse(isValid);
@@ -94,7 +95,7 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenLastName_WhenHavingSpecialChar_ShouldReturnFalse() {
+	public void givenLastName_WhenHavingSpecialChar_ShouldReturnFalse() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("r#@t");
 		assertFalse(isValid);
@@ -102,14 +103,14 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenEmail_WhenProper_ShouldReturnTrue() {
+	public void givenEmail_WhenProper_ShouldReturnTrue() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userEmail("kamal@gmail.com");
 		Assert.assertTrue(isValid);
 	}
 
 	@Test
-	public void givenEmail_WhenEmptyString_ShouldReturnFalse() {
+	public void givenEmail_WhenEmptyString_ShouldReturnFalse() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userEmail("");
 		Assert.assertFalse(isValid);
@@ -117,7 +118,7 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenEmail_WhenShort_ShouldReturnFalse() {
+	public void givenEmail_WhenShort_ShouldReturnFalse() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userEmail("fshg");
 		Assert.assertFalse(isValid);
@@ -125,14 +126,14 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenPhoneNo_WhenProper_ShouldReturnTrue() {
+	public void givenPhoneNo_WhenProper_ShouldReturnTrue() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userPhoneNo("918806547659");
 		Assert.assertTrue(isValid);
 	}
 
 	@Test
-	public void givenPhoneNo_WhenShort_ShouldReturnFalse() {
+	public void givenPhoneNo_WhenShort_ShouldReturnFalse() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userPhoneNo("9188064");
 		Assert.assertFalse(isValid);
@@ -140,14 +141,14 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenPassword_WhenOnespecialcharacter_ShouldReturnTrue() {
+	public void givenPassword_WhenOnespecialcharacter_ShouldReturnTrue() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userPassword("pasW8rrd#");
 		Assert.assertTrue(isValid);
 	}
 
 	@Test
-	public void givenPassword_WhenShort_ShouldReturnFalse() {
+	public void givenPassword_WhenShort_ShouldReturnFalse() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userPassword("Pass");
 		Assert.assertFalse(isValid);
@@ -155,7 +156,7 @@ public class JUnitUserRegistration {
 	}
 
 	@Test
-	public void givenPassword_WhenNospecialcharacter_ShouldReturnFalse() {
+	public void givenPassword_WhenNospecialcharacter_ShouldReturnFalse() throws UserDefineException {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userPassword("Password");
 		Assert.assertFalse(isValid);
